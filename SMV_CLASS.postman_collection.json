@@ -1,0 +1,2284 @@
+{
+	"info": {
+		"_postman_id": "c86170cd-a2dd-4a80-ba28-3149047b48dd",
+		"name": "SMV_CLASS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32224620"
+	},
+	"item": [
+		{
+			"name": "class",
+			"item": [
+				{
+					"name": "GetAllClass",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}class"
+					},
+					"response": [
+						{
+							"name": "sucess",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": "http://localhost:3000/class"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "117"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"75-hF/YYfdKmfpJrwEvnCy5IpH9BBA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:29:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": [\n        {\n            \"class_id\": 6,\n            \"name\": \"Test Class\",\n            \"created_by\": 1\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "insertClass",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"class Name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}class"
+					},
+					"response": [
+						{
+							"name": "Missing param",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"class Name\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/class"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5e-VAcBzZeEnDkaNeuxNAbId5/+JWM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:30:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 400,\n    \"responseMessage\": \"Missing name parameter in request\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"class Name\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "http://localhost:3000/class"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-Jlw3Ntx4Ro7aRq6KgW9K2gUyHD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:31:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "missing Auth token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"class Name\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:34:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "unauthorizedAccess",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"class Name\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-DR9x/TVUpGe5KnK8vfzRoZ8xubg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 10:26:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 401,\n    \"responseMessage\": \"You are unauthorized to access the data\",\n    \"responseData\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteClass",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"class_id\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}class"
+					},
+					"response": [
+						{
+							"name": "missing Auth Token",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url}}class"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:34:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "missing Class ID",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"62-e9bFRgigT1XVHlJHTVaxBp5k83A\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:37:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 400,\n    \"responseMessage\": \"Missing class_id parameter in request\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"class_id\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-Jlw3Ntx4Ro7aRq6KgW9K2gUyHD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:45:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "unauthorized access",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"class_id\": 6\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-DR9x/TVUpGe5KnK8vfzRoZ8xubg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 10:26:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 401,\n    \"responseMessage\": \"You are unauthorized to access the data\",\n    \"responseData\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "updateClass",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Update class\",\r\n    \"class_id\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}class"
+					},
+					"response": [
+						{
+							"name": "Missing authentication",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": "{{url}}class"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:49:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "missingParams",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Update class\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "94"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"5e-VAcBzZeEnDkaNeuxNAbId5/+JWM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:50:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 400,\n    \"responseMessage\": \"Missing name parameter in request\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Update class\",\r\n    \"class_id\": 7\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-Jlw3Ntx4Ro7aRq6KgW9K2gUyHD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:51:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "Unauthorized access",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Update class\",\r\n    \"class_id\": 7\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-DR9x/TVUpGe5KnK8vfzRoZ8xubg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 10:27:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 401,\n    \"responseMessage\": \"You are unauthorized to access the data\",\n    \"responseData\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "addStudent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_name\": \"users\",\r\n    \"email\": \"email1@gmail.com\",\r\n    \"class_id\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}class/addStudent"
+					},
+					"response": [
+						{
+							"name": "missingAuthentication",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": "{{url}}class/addStudent"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:53:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "MissingParamName",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": "{{url}}class/addStudent"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "99"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"63-kVKhxxdBrIp0M3NUOM0d/T8wGBI\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:54:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 400,\n    \"responseMessage\": \"Missing user_name parameter in request\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_name\": \"users\",\r\n    \"email\": \"email@gmail.com\",\r\n    \"class_id\": 7\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class/addStudent"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-Jlw3Ntx4Ro7aRq6KgW9K2gUyHD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 02:59:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "unauthorized access",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_name\": \"users\",\r\n    \"email\": \"email1@gmail.com\",\r\n    \"class_id\": 7\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}class/addStudent"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-DR9x/TVUpGe5KnK8vfzRoZ8xubg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 10:27:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 401,\n    \"responseMessage\": \"You are unauthorized to access the data\",\n    \"responseData\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteStudent",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}class/deleteStudent/2/7"
+					},
+					"response": [
+						{
+							"name": "missing Auth token",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": "{{url}}class/deleteStudent/2/7"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 03:14:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": "{{url}}class/deleteStudent/2/7"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-Jlw3Ntx4Ro7aRq6KgW9K2gUyHD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 03:20:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "unauthorized access",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": "{{url}}class/deleteStudent/2/7"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-DR9x/TVUpGe5KnK8vfzRoZ8xubg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 10:27:50 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 401,\n    \"responseMessage\": \"You are unauthorized to access the data\",\n    \"responseData\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "files",
+			"item": [
+				{
+					"name": "insertFile",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/C:/Users/LENOVO/Pictures/1697703971927.jpg"
+							}
+						},
+						"url": {
+							"raw": "{{url}}files?class_id=7&file_name=files4.png&description=test class&file_type=4&url=https://www.w3schools.com/sql/func_mysql_isnull.asp",
+							"host": [
+								"{{url}}files"
+							],
+							"query": [
+								{
+									"key": "class_id",
+									"value": "7"
+								},
+								{
+									"key": "file_name",
+									"value": "files4.png"
+								},
+								{
+									"key": "description",
+									"value": "test class"
+								},
+								{
+									"key": "file_type",
+									"value": "4",
+									"description": "AUDIO: 1, VIDEO: 2, IMAGE: 3, URL: 4"
+								},
+								{
+									"key": "url",
+									"value": "https://www.w3schools.com/sql/func_mysql_isnull.asp"
+								},
+								{
+									"key": "tags",
+									"value": "1,2",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "missing accessToken",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"url": "{{url}}files"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 11 Jan 2024 05:44:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "/C:/Users/LENOVO/Pictures/1697703971927.jpg"
+									}
+								},
+								"url": {
+									"raw": "{{url}}files?class_id=7&file_name=test.png&description=test class&file_type=3",
+									"host": [
+										"{{url}}files"
+									],
+									"query": [
+										{
+											"key": "class_id",
+											"value": "7"
+										},
+										{
+											"key": "file_name",
+											"value": "test.png"
+										},
+										{
+											"key": "description",
+											"value": "test class"
+										},
+										{
+											"key": "file_type",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-Jlw3Ntx4Ro7aRq6KgW9K2gUyHD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 08:43:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "missing Files",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "/C:/Users/LENOVO/Pictures/1697703971927.jpg"
+									}
+								},
+								"url": {
+									"raw": "{{url}}files?file_name=test.png&description=test class&file_type=3",
+									"host": [
+										"{{url}}files"
+									],
+									"query": [
+										{
+											"key": "class_id",
+											"value": "7",
+											"disabled": true
+										},
+										{
+											"key": "file_name",
+											"value": "test.png"
+										},
+										{
+											"key": "description",
+											"value": "test class"
+										},
+										{
+											"key": "file_type",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "98"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"62-e9bFRgigT1XVHlJHTVaxBp5k83A\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 08:44:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 400,\n    \"responseMessage\": \"Missing class_id parameter in request\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "file",
+									"file": {
+										"src": "/C:/Users/LENOVO/Pictures/1697703971927.jpg"
+									}
+								},
+								"url": {
+									"raw": "{{url}}files?class_id=7&file_name=files.png&description=test class&file_type=1",
+									"host": [
+										"{{url}}files"
+									],
+									"query": [
+										{
+											"key": "class_id",
+											"value": "7"
+										},
+										{
+											"key": "file_name",
+											"value": "files.png"
+										},
+										{
+											"key": "description",
+											"value": "test class"
+										},
+										{
+											"key": "file_type",
+											"value": "1",
+											"description": "AUDIO: 1, VIDEO: 2, IMAGE: 3, URL: 4"
+										}
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-DR9x/TVUpGe5KnK8vfzRoZ8xubg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 10:38:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 401,\n    \"responseMessage\": \"You are unauthorized to access the data\",\n    \"responseData\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "updateFiles",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"file_id\": 1,\r\n    \"file_name\":\"pran.png\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{url}}files"
+					},
+					"response": [
+						{
+							"name": "Missing Auth",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": "{{url}}files"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 02:20:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file_id\": 1,\r\n    \"file_name\":\"test3.png\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}files"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "68"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"44-Jlw3Ntx4Ro7aRq6KgW9K2gUyHD4\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 04:41:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "fileNotFound",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file_id\": 1,\r\n    \"file_name\":\"pran.png\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}files"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "106"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6a-M4sNege8bSqjoRsPCmafJ8Q5AcQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 08:58:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 404,\n    \"responseMessage\": \"file_id that you are looking for is not found\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"file_id\": 1,\r\n    \"file_name\":\"pran.png\"\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "{{url}}files"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-DR9x/TVUpGe5KnK8vfzRoZ8xubg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 10:38:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 401,\n    \"responseMessage\": \"You are unauthorized to access the data\",\n    \"responseData\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "deleteFile",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}files/7"
+					},
+					"response": [
+						{
+							"name": "missing auth",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": "{{url}}files/1"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 05:11:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": "{{url}}files/1"
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "100"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"64-DR9x/TVUpGe5KnK8vfzRoZ8xubg\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 10:38:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 401,\n    \"responseMessage\": \"You are unauthorized to access the data\",\n    \"responseData\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "search",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}files?class_id=7",
+							"host": [
+								"{{url}}files"
+							],
+							"query": [
+								{
+									"key": "class_id",
+									"value": "7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stream",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "access_token",
+								"value": "{{accessToken}}",
+								"type": "text"
+							}
+						],
+						"url": "{{url}}files/stream/3"
+					},
+					"response": [
+						{
+							"name": "missing Auth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": "{{url}}files/stream/1"
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"59-0sEvnFu72HLHT8V2ihTF04efLhE\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 16:10:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Missing Authentication token\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "Not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": "{{url}}files/stream/1"
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"71-pxRG40e+BjoaMQC6ros36+yoPyc\""
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 16:13:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"responseStatus\": 404,\n    \"responseMessage\": \"file with Id 1 that you are looking for is not found\",\n    \"responseData\": {}\n}"
+						},
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "access_token",
+										"value": "{{accessToken}}",
+										"type": "text"
+									}
+								],
+								"url": "{{url}}files/stream/3"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "raw",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/octet-stream"
+								},
+								{
+									"key": "Content-Disposition",
+									"value": "attachment; filename=test.png"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 12 Jan 2024 16:14:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "����\u0000\u0010JFIF\u0000\u0001\u0001\u0000\u0000\u0001\u0000\u0001\u0000\u0000��\u0000C\u0000\u0003\u0002\u0002\u0003\u0002\u0002\u0003\u0003\u0003\u0003\u0004\u0003\u0003\u0004\u0005\b\u0005\u0005\u0004\u0004\u0005\n\u0007\u0007\u0006\b\f\n\f\f\u000b\n\u000b\u000b\r\u000e\u0012\u0010\r\u000e\u0011\u000e\u000b\u000b\u0010\u0016\u0010\u0011\u0013\u0014\u0015\u0015\u0015\f\u000f\u0017\u0018\u0016\u0014\u0018\u0012\u0014\u0015\u0014��\u0000C\u0001\u0003\u0004\u0004\u0005\u0004\u0005\t\u0005\u0005\t\u0014\r\u000b\r\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014\u0014��\u0000\u0011\b\u0001^\u0005x\u0003\u0001\"\u0000\u0002\u0011\u0001\u0003\u0011\u0001��\u0000\u001d\u0000\u0001\u0000\u0002\u0003\u0001\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0006\u0004\u0007\b\u0003\u0002\u0001\t��\u0000\u001b\u0001\u0001\u0001\u0000\u0003\u0001\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0002\u0003\u0004\u0005\u0006\u0007��\u0000\f\u0003\u0001\u0000\u0002\u0010\u0003\u0010\u0000\u0000\u0001�c\r�\u0019\u001ff#?��e}\u0018l�sŘ0��\u0001h�1�\f\u00125��y2���}e�L��\u0019��c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\\Js/<�N`\u0018L�\u0003�6!\u0013��ml�+\f��=t��o���0�2�\u0012C\u001c�e����3\u001d��a��L\u0006N0\u0000\u0000\u0001�3(~�]�5Jis�Ւe�kVe\u0017��4A����\u00001����}Yq��Ḫ����o���\u0006à��l�i��645Ǧ\u0012�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00006\u0016��/^\u0015\u000f��RZ�.�!!=c'6���\u0006\u0002��,�2ڣ���MŬp�\u000b��Dn��\u000b��b�K���;]��Z����4ς�s�2%�#^�ĭk��@\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001f��ۛ��Edc�u\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0007�ʂ\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�3&�O׉���'��\u0006y\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000b\u0016\u0018xڢꜼr�\u001e\u0012��m\u0011�\u001f\\���\u00007�\u000fOHm�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u001e�\u0018y[���}���\u0018j�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\t\u001cs���\fߟ�\u00189O�����������jQ�?:\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000f��qTM�O�� \u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001v��\u001e.[dL�O�x���yj\u001fcӋ\u001eǤ\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�T�9�%b�q�w�\u0017'��\u001e*�]ٲw_l\u001d}�pu�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003#\u001f'n�l�L+���f4��j�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\t�Y�=\u001b�����~�\u0012�L��ک[jS\u001d\u0010?B��\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0016��̦-b�?��@��D\u0019�\u0013\u001a�T�mFl\u001d�\u00012���K5���x~Vd\u000f\u0019�8b�P�\"�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\rߤ6�\u0000��n����|�\u001dc��G��\b=�\\\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001l��j��+`����ɧE�۰�\u0017lq��֊�����\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0019?\u0012\u001f���\u001d��q�f��v����|ǽ\u0017'a��-�g�ו\u0003�\u000f���?��x\u0000\u0000\u0000\u0000\u0000\u0000\u0000&�e���~_��\u0013�8�:e�V�J�Jc�\u0007�?�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002�W��$���ʝ'u������I\u0013j��$rq����\u0001e�Y��\u0013:�gZ��lI1\u000b��W�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000bmI�\u000e�����σ\r�'`=�X;��\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�ϏIy�erq��8�ۃv�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00039��˝�\u001d�q�ɍ������>w�/\u0012\u001a�ϷiD�?0��\u001d\u0002��\u001d��\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0004��[�;7E�����Z�A�{\u001e0ts\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003#\u001cK\"D�g�zy�Ln\u001e!��\u001f\u0001�#\u0006\u001f��v7\u0010%�D�X\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000}l�i�`�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u00006\u0005��\u0012�t����z�-�L5�.3{�0�ơl�j\u001b���(n�t��U\r�X)O��h��ҡ�gl�-�%�\u0000�U4���tsp���z����ҫ�)WozRk��muA*E7�-�E��&�ODˎ�Z��%7!��\u001b\\�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0013�\u0000�\u001f��\u0000�r�Žoǝ�\\��<;��Ɲg�\u001b�yS^�<�ϯ钛3-�-������6ݻ\u000b-|��\t2�]A�]�Z8G��9?;\u001f��ۧ\u0014�\u000e��+���2�]Aǝ��\u001c���ͻӊ#��1ٻ���w�Xh\r���\\Wt����.����yk�|l��[\u001d�о1��g-unD��L����\u0016ˏ:�����]����\"�A�y:*e���u~��V���\u0017VeWל�Y�x�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000��qk\\9�YJ�__�^4�6:w�Ut=�\u001f��[2Z}ˏ7MT��cj���ڜb��\u001eKܺ��T��]�R�=p��M�V�L�ך��n1�\u001c�����\u000f-u}5\u0007�g��4�;6���z�\\ߟ��ڮh��t4@K�\u0015��\\��\u0010�yrz�Kt\u0005���j��=�U���wp\u0007zkT����\u000b�\u0013�\r�\b�R�Ϣ�\u0007S�[�ٿp'vY�X�8��\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000���\tX����\t\\\u001f\u0001h��\f��1f�%l2}�ś\u0002 JHք�pX��\u0004�]df}�\t�p���\u0006n\u0010���\t?H�e��\u0013yu��'\u0000,�>\"��\\\u0016o*�X�;\u000b�Yp�N0\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003 �\u0000\u0003 �\u0000\u0000\f�\u001c\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0003��{�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005�����.<�\u0017ӕ�In\u001fy4О{fԺ\u0006Cr��\u0007y�\u001aws����؝��ǜ�v�JҶ��\u00199�/l~�\u001a��v���[#����(ِ\u0000\u0000\u0000\u0000\u0001�r햻�?��d%\u0006׫��̻�X����r�h�ݏ��y���'�\u0017�(��qw�\u001a��C�\u001c�\u0000L�Ц@\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0012�z �KRE���-ʈ�eх�N�%��A�o�\fϬ\u0011s��\u000b?�Pt�<F���L(\u0000\u0000\u0000\u0000\u0000\u0005�K\u0012�\u0000��&�G�ʎ'�\"o�\u001cK�T\u0005�\"�:3MV\u0016[�\u0014�1�\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001��\u00009\u0010\u0000\u0002\u0002\u0002\u0001\u0001\u0004\b\u0003\u0007\u0003\u0005\u0000\u0000\u0000\u0000\u0004\u0005\u0002\u0003\u0001\u0006\u0000\u0007\u0011\u0014\u0015@\u0010\u0012\u0013\u0016456`\u00173P !#%012\"E�7Fp����\u0000\b\u0001\u0001\u0000\u0001\u0005\u0002�\u0000�t�i9���L@&|����\u0005��\\\u001d�� �>YL�Ј\u001f�\u000e���\n�\u0000\"ex\u001e;\t\u001a�.\u0011\u0011�O+\u000b��\t3�T���kk�J���%��`\"%M\u0002^W+\u001a묐dB�Ÿ\\�ש\u0003C7s\u0012��c \u0019IM\u0012r\b��@d\u0015�e?V��\u0015=�\u0015�\u0015)d���\u0018\nR�\u001b'J�+.�o���Snʛ���B#\u0014�\u0011\u0004ơ�\"R\u000e�Wx�\u000b(�\u001f\u000b���X��\u000bD��eyQ�a�mU�m��K��C\"t�[��@&�X5���\u001a\u0016{6�$��e\u0013:4��j�����0J\u000b���!��N�eX�T�c$�ɝzխ-`�1����W��\u0011��EN� �-��=S���Q|�MC�w:er����\u0010U����l\u0014���+�\u0007�\u0004�j6��uW\u0018Ͻ�a;�@!{\u000bX�\u0016��X3\u0019�F,����\t�3�e\u0005XF�\u0017эj�Z�f].��\u001dR|ѡ!�{,�0�F\u0015�\u0011;\u000b��Z�W���,�\u00105�wc�EiO�ܬ��Y�:仡>�d��h����,\u0007�쏾G�����\u000b\u0002\u0016�CBE�ӻ��\u0016�@�|\f����\u0019�hyzvo��\"U�\u001e���0'd+/ڮ����\u0000=��_�c2m\u0012nͰ���M��2�}�?��R\nMʕc� jkneF�ت#&D�/��`B��hH���\u001d�{K�i�7�,�j@�P�i���\u0015��.�؋�\u0019fFB��,�\u001d\u0019Y�6$\u001c�ܲ���s�\u0013'��nU�#�;b�.���E.H�9�r�N͙����)�\u0004��d��6\u0003�\u001f\u001c7\u0016E�1\u000b�&\u001d�\"G|\r�\u000bȶ�]g�\u0000\u0000\u0003\nîp����c\u0019�BAe��_������\u000e#�}�\bfɪ[\u0015�\u0011\fY�����p\u0015\u0017���RD������I��f07_�x�s\u001c��G֞j��*�\u000f9\u0018f\\\u0003]��\u0017\u0003��X\u0014�0FR���c�����K��K�������f'{\u0013͢\u001e\u0004\u001a�;ֺ�\"vU*�Rr�ŪJ�\u00015�\u001c��\u0017��\u0004��F6�\u0019�\u0018�|�\u0014D�\u0002_H\f\u0017c��>i��\u001b2Q�\u000fˣ�T\r�s�N�^\u001b,~���������:}��k[��?\u001d�|ƺan�ё�\u0012\u0003�}��S�\u0019���\n�\u0000/�K�R��/0��?����O�z6���u?\u0003�1t`\u001f)_\u001c/�I�T��>@\u0010\u001arp�s�^�\u0016�b��\u0005��O�Ko\u0018��<\\�\u0005�ۦ�mZ1c\u0002\u0015�\t�����X�V�*-��S�3��a浿�c����K����ɜr�`\u001b'K�\r��C�\u0005]��\u001e����7rQ�3��|g���\u0000�\t�OF��_/�ʘ��\u0013�'�7-�*X�;#��'3a�\u0017�^\u0006�y��9}�|�%�SP�\u0002Y�\\�+�e�B\u0006�2CeS�K\u000e���þ\u0016��l�{2��\u0012?��\u0016��yo�q͞Շ���9��k�1��\u0000wj�O�j�\u000enX�������Fn�f�UVm��ʏJ�\u0017���s�S]�3�Y\u001e\u001a��jd�Ŝ�1������\u0000w_�\u0001>i��~K���\u000f�Ql4��1#�Lǵ�R�\u000fCO��>k�Y��{�=㿕<6�z����Cq\u0011�\u000b�wk=A�\u001c,\"�\u0013d�\f�3���C9o�\u0018N\u0004\u001aR���3 �*Bw���\u0005���\u0007r��*c��(7m\u0013#���\u0000\u000b��5?�\u0018��`��]�W\u001b2���[Zq/��\u0014�mno\u0017�M��y������\u0005�t.h��\u0002|�ѵ�\\Uyt�N�<(�xQ��9w� �/��bu\u0010��E\u00070\u0012�G\u001a\u001d���>j\u0001�\u0000�J=nT\t\u0017��E*���\u0016\u0004ERL\u0005�\u0010��ﰵ%�0Ӗt��]���.�\\\u000e�w�f]��9��9�v[�\u0004\u001c��׳�\u001c\u000e\u0004\b*ҧ�\u0007�5�k�_\t�\u0016r��<Y*��ц8\u001e\u0017f�.N%��~�qY*\u0012㬢H�l\u00131�\u0014��u`/0+\u0012\u0002�͊����lq�G\u0002\fv��J�yz\t�ix���cy���s���vJ�2�8��\u0012$�A���+3���9������s\u001c��\bD��.\\\u001d��Ė��\u001f3\u0019f9�O�)��$X<�bAX��f{ݼ�6K\u001f���b@����/�-*˩�\"�m����k\u001aa[D?\b��]$g�7�\u001c&�����G���3�6\\s�7KW\u0006\u001eE\u0011gH�F�+HR_\u0011tܷ�\u001e�\r\u0011U��.`x&t����gK�d���v�\u0011t�ǋ6\rA���c�5t������\u0001\u0005�}99���6<�I\u0019�.�vH3�Y��Y.��ס�zL��[t��+�GI��WH�@W\u0000�iǀ�Rc�s]���\u0018~\u0011��ϥ��ժ�\u0004mSyӆi�⥶�a��0�=(`8�Ύ^�>:DÏ\u0013܅��H�3�#�Gz�����ZنzDÛ6�^�7�\n�\u001e�UKת����k�p�.�AZv�U���o��a�5��ꪔlq�a-\u000f'Y��Y'y[�\u0011�⺔q8���P\u001d�M���u=��6�J&y\u0014�)p�\u000f5m��%�]S�7S1����Z�a�Y5#�\u0016�}\u000e��-\u0003^Q�F�HԶ\u0001����t���u}\u0010&��V��˦\u001b\u0001�M�;��s�/��)�\"O\u0016���oL\u0012\\H�?T\u0012�Jv��cά�����N��y��Q�Sx\u001b�K�p�H������t�Ԓ��q�a��&2�s�\u0007�����>^�\u00135��;nS��\u0003㛕���\u000fF����-���os\u0007�\u0010��\n}+nA��\u001d-\u000e��O������{�M���S\u0000���/ꭿg����E�\u0015�H��w��}O\b��\u0013���&���\u0010oi�\u001bb��ŵ�����>�tum\u001fѤ�U�/��5�(a��]�=`\u000b�\u0017s��V=��nnӏ�+�ګ��]F��Q�4���隂f0v�gQ�n�ҷ��\u0019&\u0017\u000e7g�>�&M�GV�<_g�n�$�v�xB]�E�\t�����ۻ6m�S�ƿ�p�H��ϼF�y�~�����`��_�\u000e��X�ޤ�\u0012n��&M��b�RbB6�\u000e��黫=+ꮱ|GMv��e��i=V���\t|U�����B�_��RM�Ss�-��v)�fOU[w���'ꭜ�V�Ҷ|l����Hb�\u001d5���P��o���ud���a�Ľ���D j��ue7�\u001f�\rӧlܮ���\u0007�e_W��h�i�\u0000Ac��a��y�$�u������\u0010�:稉���t�d�Vף�q���%CH����P�g�F\u0011�!�h�֫查�i�+�*�5b4�u��]�\u0017}+\u001d�ԣ�z�۪٪��]^�c�!�cW����\r�]7;V,�����n\u001f\u0003�)���RիՁ�����ڵ�J$x\u0018>�KU��f��\u0000\u0012��\u0019\u001b6G�4\r\"VI��7W����9@�w.��^\u0013�?�d\u001c��&[\r��1�Ҷ�l�_!���Mo_���s�.�1�mZ��j����^z��?�%9:[�\n��nz�\r\u001f��\u0016��P�h��5q���2���>>�R���Y��\u0012wOwn�-�]\u0013d\u000bn�'��=9&�/OΫ^�\u0000��\\�oz6\n\u001b��i_���\u0002dR���׆�1��&E.ϼ�xkS\u0018��\u001a�m\r��yZ�>��0\u000e�l�q�lL��vF��\u0007&�-�\u0002fVvf���a\u0000�\u0016����Ic.{����\"�<\u001a��5�\n2�\u0010�A��\ra_\u0007|�Zl�Y�_\u00046�l�\u0002k+�f�5�lx\u001bsW��V�,�ϴWg�O��q��h~�js�4�j�tٝ��y-��㝙�yf���\u001d��0a�0��s�V���8�32¯�\u0000u*\u001eۿk���n����Lc�6�e\u0019��]�z���-{\u001b\rN��͵V\t�[�4j>�\u0002���5��\u0015��ی.�ܳ���GQ����C�7M5�G��Ք\u001a�}�P�UQ�\\�{5FU��Mgz��V�\rӫ\t�U:��$V��C?\r�z�\u0004w���ګ\u0016��<��+�Tg��1)=���U��1:��i�u5���TP���U7@�8QB����\u0013���k\f\u001b[�\u0019�\r\u0017Vb[<i�d�iZjguN����\r�#��\u001b�\t���\u001d\u000bt��F\u0007JnyM�\u0006iC��5s���-BڄKH;[!�N���9\u001a�O����\n^\\-:��Me�jR&[��z\u0016\u0006#\u001d)IT�o�\u0005�\u001b��P�\u0004p�+6�E���lӥ\u001d�Qծj�%^�Ԕ�\\\\�?L��\u0013s�{P�a��\na�-��\u00167�3�������z(�4~������Gl�_�m�\u000e\u000bR�zZ2��\b��\u0019��+Sp\u0012�;J�_\u00194��\u0017\u0002��VF�ō��f��\u001a�'è�\u001b�kҝ];�J\u0014Q�\u0012i��������s2T�=���_�1TL�WvD\u001d���D�\u001c\u0003\u0001����~��\\G�[�Dw�������K|}8/jR���=�\u0016�a\u0016�uw\u0001G.�\n8��\u0014\u001e��\u0001C��\u0001\u0001vf�\u0015&%l��}�u�\f���6�\r\u0007�rrP�@���b��9\u0000a�\u0016\u001b\u0011��\u001b\u001b\t��1���7]2,�wv=,_0m�OOI6��ud�\u00195�[���6��~�դHܝ\u00146��5ZӍ��|��[�\u001c]��V�bCB���\u00005\u0011\u0000\u0001\u0003\u0001\u0005\u0004\u0006\t\u0005\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0002\u0011\u0003\u0004\u0010\u0012!1\u001302A\u00053PQaq \"@B`p���\u0014#�����\u0000\b\u0001\u0003\u0001\u0001?\u0001�E\u001e�|Tm4��@Ο\u0003:�q�k����݁��`}a5\f\u000e�\u0014���<>���eJ�ճ�\u0015qb\u0004\u0014\u001e昩�kK�\u0010�tcA\u001b\\�:\u0014�S�ᒵ�^ͦ�#��;K�Ӻ��Y��uNU:��\u0012Z�1d\u0015,\"�\u000e\u0012��\u0007��+p�v���S|��w�:֯xy�\u001a\u0015j�\u001f�{\u000e�?n�'\u001e��K閄���\u0016\u001c�\u00142\u000ei�\b��U\u001d.Vv����\u001bMF�KO\u000e��mo�@\u0003�1�\b�Z(��&R�X��$��u:t�\u001e��I�B}���j\u000e�Q�/�o(u�C7\u000f5CB�f,���oh{p��na �=-�s�~@+g[@쿕N�i���jo�>�\u0016Zm\r�w�N�Vs6C!����\u0000���m�\u0007�u��:}�#X�\u0000ohڪ��(t�\u0006C[��h�\\�C��*T��o���St�7ʛ�)�T�ӑE\u001b�n\u0019.h��'#��T|.:����Z�\u0010\b��(\u000ew\u001dV����'/\u0010�Q�\u0007$3\bj�+B�M�괺sD\"rQ�iGU( asZ]9�>u\u00157J��J�*T�y�2�J�?\u0002ǱG��\u0000��\u00000\u0011\u0000\u0001\u0003\u0002\u0004\u0004\u0002\n\u0003\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0002\u0003\u0004\u0011\u0012\u0013!102Aq\u00053\u0010\"#@PQ`a�������\u0000\b\u0001\u0002\u0001\u0001?\u0001�\u00105\u0011�k���}i��vLpx�8�v\u0006�,/�Y\r��lm� �:�J)3\u001bpe�n\u0011h\"���EʛĜA�R�$r\u0007��<S1�9F��u��\u0011��(\u001f�8��NO�?K\t6p\u0018�Q�\u0012턪nS��#�G�?D��V�ě�r<����\u001d�/����u��z(G��J��\u0010\u0013�nQaС\u000e����\u001c1;\u0013�ʁ��׉��\u000e!̲\u001b�s̲]���KQ;dx{�\u0001��N�;�瞢c\u0014r\u000b4\u0003{ou\u0015l桰<�p��(?��ě�r:4�U\u001cò�\u0017�e�c�r0H�ҝ\u0013�KJ��)�;�9\u0000���\u000e�2&Ƕ�Q3���\u0016{���\n�ñ����)3I�ݯ�?��v��Kh~[(�1�\u001a���\u0007����s8��-4Ss\u0004�\u000b̒�v�\u001ax�\u0016�~T��\u0007�\u001f_��\u0000R\u0010\u0000\u0002\u0001\u0003\u0001\u0004\u0005\u0006\b\u000b\u0005\u0006\u0004\u0007\u0000\u0000\u0001\u0002\u0003\u0000\u0004\u0011\u0012\u0005\u0013!1\u0014\"2AQ\u0010#Raq�4@Br����\u0006\u0015$35P`s���CSb�� 0ct����DEpu�����\u0000\b\u0001\u0001\u0000\u0006?\u0002�\u0000�\"��#�\u00174��2,M�ʜ\u001f}&�yN�=oe\u0018�\u0019\u001aQ�\u0002�һ���f\\\u0003J��$j܋�\u0000�i�����\u000f[�F7FG\u001cՆ\r.�\t#��քf�\u001e\t\u0015۲�NM\u001fɥ�q�<�\b\\O�0�\u0015��m|�V���)��\nH���\u001b�¶\u0002��E$��A:4���p���xԁm�c\u001fo\bz��\t\u001a4�~J��\u0011<N�z\u0005x�6[��3����pt\u0013F��\t\f^������\u0019%�=\nM\u0014H��sU\\�Y\u001a\t\u001668\u000eP��\u0013D�\u00122\u0003�?k\"��Mq�n�\u0000\u0005&�V�E��9S�郞L\u0012n�8^������\"�\u0003A���(�N\u0019�\u001c\u0003D�\u0004���\t�3hm*pN9T�2v��(��?g�[�\u001evYt��\u0003�~�C͘c?���O���O�7�3�͑�>5c\u001d�\u0004��\u0006\u0004s��\u0004\u0012tXfd\u000f��8���t��OO\u000f��3B�\u001c��\b�W��A'E�� \u0012\u0017���o�\u0012n���t�4LPI(\u001d��\u0011D�\u0011�\"��\t\u0002?e��7���\u0013��\u000e��.���.���\u001c��ɦ�qo6z��gH��{L��)w��\u001e�Υ#4ٶ�i\u001a��x\n2$\u0012<c��\u0012\u00053�N车U�\u0014��d�W\u0015ָ�\u0019V\t\u001a!��\u001c}5��>������o+j\u0019\u0018CƑ��_�̸\u0007�͟�O�\u0000�W�\u0016�.�\u001c)<\u0007^�X��-<�a�\u001c+�nW�D���x�݊�_\u001a����.��\u000f��\b��\u001b��D{\u0018\u001a�\u001c⬂\u0012��r\u0002G<b�\f��k�g\u0014����'譭\"��\u0019�B\t\\u��\u0015���q{\u0000`�׎1�ސ\u001e�1����� ,ʑ[�y�,�|\u00186iI-�|��d{�c;G�t���I\u0014��ko\u001e�.�s�%\nz�l��Õl半\u0016��${�a\u0005r��ݟ\u0007�N3��!�JCj\u000bB�$e�-l&�ߓ�b8�W\fէ��+�6�y��\u001c*��\u0018�UL\u0011E�t\u0015�l5��\u0013#H�{��\u001aؒ\u0011��V��`��+;\u0016�\u001e�\u0007��\\\rl�����H����\u0007�e���\u0000���\u000e��.�\u001c)�\u000e��ظ�&~��'�E�\u001fp��\\�h��\u000fgF��խ�̓Xʲ��\\ ʷ\u001e�\u0000����b��|�Qz���ib��N��\u0000\u001bq?uYYƻޏ�4\u000e�;�۳t�:�G�8@=S���\u0014?����l�ݢߍmX�\u001dΙ�w݌\u001a����/��\u0006�p'z��\u0018��*5f�ʟ���F�ut���V�M��ɼ��~Jwc�[\u0011m�HE�ȥ}?�}��s�\u0007k}s(��|koJ�Y�v��\u0002[\u0019\u0015�݉y7��O<p�-\u0007+e\b~w3[:%r���*\u000f\u0003�ƿ\t\n�Դ�\u0003�¯�勘�r�~Q�\u000f��[E�\u0005�\u001aO#�\u0011[\u0006�y\u0002�\u001c\\!�xh9=c�k����M��\u000f�\n��c#%��X�\u0019Zٶ�\u0012\r�6z\f1�T.\t�|x�����J7�\u0003��\u0015c\u0012�\u000f4��s�椴�\f��6{�v?�ﭤ�J>P\u0015:E&���H�VΎ)`i��Fx�V \u001cc�t�9�?�\u001a\u0017K&��լp�R�6\u0004�\f�F>�KV�0!�\u0013\u0003��&ߝ�\u0003Lm��\u001e\u0015(�ae\u0018e\n1�T�+�\u0013�Y;�9T��ɦ\u0019;K�q��#q��?(T2�,����:�#\u0018�#�X�p�\u001e\u0018����\u0005\\\r�%���\u0019Di��\u001cp�9Tv�&`��S\u0003��nZ|�\u000e\u0002>���*�Ĺ3�p\u0015\u00047��)&ֈچE\u000b��zH\u001aD�FqOi����xɎ�\n�j�4�#�\u0007��J��:�8�\u0007ƍ��zO�����\u001c�D�\u0000�ꎵ-���u:�`s���[I���\u0002�H�Г�pi\u001dj�{���5��L�w\u0003�Y�\u0018\u0003�W�\u0019���ǭ\u000e���E$j˥8�T\u001d5$;��K �H��]-�;kפ�{��(7���w\u001a��Mg5�[��\u0018��1ƺ&��mZ�x\u001c�j\u0002f�A��\u0003��Iv�b�L�\u0003�yԻ�0%��PC{�8���FK(#�9�u�`Ɂ�\u001e��;��u�7~�Ēj8ӯ\u001db=����\u0010�\u0003(:O���9�\\79\u000f\u0013SC\u001c�b��u��7\"X }k\u0013\u000e\u0014f'2\u0016՟]%᜛��Ɂ�[bi��e���w��S�;�\"���3�E\u0003H4�\"M恅�8\n�\t�0�C`j�ˍN�l\u0019�D�Q�xSZ\t?&f�S\u0003�B� �\u001a[\u0003<9d��J\u0012\u0015��^\u0015���w/��.�X���\u0000��\u0019>>\u0014��e\u0003\f}\u001f��k\\�t�\u001d���]^�kL�T��\u0000`�\f�ąQ�<\u0005\u0005����:��=���m��ƈ�#_����\tО��Q���]�V��v�z�\u001d��0P\u0001]S��5q\u001c>9�\u0013\\$Tld\u0003Q�Tdpj,�bO\u0015�]tԞ����#\\�r?��c�>^�#S��\u001cW�q�\u0006qO\u0004^iT�#�a\u0001v���7�dDq무G\u001e�5�u'��\u0015�].q��_�q�\u001c�+Zr����F�K\u001cc�����>L\u001e\"��4��\b��?\u0018�R!ì<\u000f�XW�\r| �\u0006s���7{��\u001b�*�g?\u001b?6��懰�ڸ�\u0019\u0014ȃDc��:T� ��=�Z\u0006\f�3ի����_ɤ�[�\u0010{�2=��������,����cj~�0�\u0000b\u000b�v2@�W�4\u000f$�s�E�ģ����\u0013\t��\u0019�W$\u0000�\r��~�C�Oui�y ��0�r\u001f�|h�\r,8\u0010jG�}͜as!\u001cX��\u0001Zma�>9+���]�+�q���u��>\u0015���A�\u0000\u0010H\u001fꤑ\\Om'��^G�jY��qk\u0017nLg�p\u001e���.�\u001e��\u0003�b��g��v5I\u0004��\u0007��>��<��\u001ag�a��n��B+g���+9\f�|3O\u001b�.�I\u0007��b����\u000f��\u0007��ͩ�y��53�\u0002YqZf�����\u001bä�\u001cE)����\u0015o�_��\tS�5����\u0019꿍q���\u001a_�S���|�{G��gF�-�\u0015C��\u0015�;����W���\u000f�L ��%�f�#짎e�ZL4ʟx��e�Oȑw��r)���*��\u0010i�/Ej�\u0013��\u0017V?�\u0007��\u0011�����W1j�8\u001a�\u0015�\u001cPG��Tf���\u0001���3�T��z�s侲n ǿOS/�f�����S�}��\u000fg�Z]\n\u001f\u0002+{�X�T��EI\u00138�\u0013D�{��E'��#�Vj[�:\f�$z��1��[�|�z�|l�ڟ�\u001e�S��63FT�In'\u0006��\\j�ǝ\r\u001f�^^���\u0000/�����\n\u0019�򳦕�y�\u001e\u0015�o㮍\u0019I�\u0019�\u001e\u0015���S�Z��L�zhr*-�+o\u0006F�댊\u001c��c�\u0003�i~mO�y���\u001fo�6��G�\u000f�\u0012\u0018�S�����O6���'�K�\u0000��)\u0014��pT�Vɗ������*3�v���7���QRi�so(P�#:\r~b�����Z�\u0000�\u00150�\u0018\u0007�:�D\u0001\u000b�QK�5�F���R�=\u0019�5nR\u001e�z{\u001a\u000ecs����1�1�\u000b9h�\t\u0006���/l�,�\u0000mk�#�ʚ\u001dBE�dqɔ����\u001e��=�CO!��E�3� \u0019�\u0015�\u000e�o��� 8\u001c*g^�xy4ƥ�oo\u001c\u001fWu\b�\\D�\u0018�����L��ʠ�axp��3¦���Z�\u0007\u00034\u0012=�\u0019�!��!��\u0012�<OX��ϫ/�~4\u000b\u001c\fR�0q�b��׼�d���1\u0018_�6�\"�c\b�>p����5�Y��\u000b/�ф|>u����}�ɯ�\u0000�[�[�*\u000e�\u0000h��e;�ā�9\u000f%|���i�\u0006\u001e�2\rog���{r�\u000f��ёWD@h�|\u0014r����*\u001b��\u001bf�݈3ٿ\u001e�\u0013\u001f�֘����-Mo�5��\u0004���9��j+h�閬�\u0010�\u0000h��\u000fX?mixdV�+Q��\u0003\u0005�\u0007^_�s�\u0005^Z��$�\u001c\u001c�V�Ei�\u0007\u001e�2\ra\"!{��(�Ҭ-�(#HU�-#��D\u0012�<9\u001fJ��UJ�5������w ��Yf}�\u001a\ri.[�Z�[B��[�D\u0004��V�\\��˃�D7d�\u000b�\u0015\u0016�kYep}T�ur�TzQ�y��ʖT߻/\u0010\rIt��\u001ci�;��M�\u001f�\u0011�O�\u0002�ݵ2��j\u0015�I\u0016H�5%v�+w�>ό��4�I6���MG �\u001f�fi\u0002��襨ܯ��Z��7��ƨ�hϊ�W���3_\u000b���|.o�4Y�f<I>MH�[�V���5i��T_D7\n��<��|�bX��&�%x��\u000e+K]�W�W� ��\u0005���ժi^S��>M1]J���Zf��E�-��@��+d��ɖ���\u001a�r��X�R�������[�\u001f���jv.�'�\f11�E�>�\u0000�0�픋��\u0000�Fg�H�H�\u0012�5���][\u0013�$ֺ�\u001c��\u00153C$q$\\\t\u001a�]��_\n����,\u0002XG9!:��G\nv�`�5������)���1L���Gz.b�d�\u0019�3*�[�o\u000fw�y!��\u0010ǽ]A\u000exT���\u001fv�����Av.��|��\b<�\b���fD���n\"�$�P7(\u001a\u0016�%��k\u0014�ҠR�:x�:L\u000f�R�\u0006x�#�I�\u001f�\u001b�|.�뮭ͳ\u001f\f��W��P�x���`��pǽ]a1��M\u0018���ظ���#��\u0015�gO\u001e\u00155�\\C(�d�痒9z\\\n캴`�����Cw0�\u001b���]B��\u000e\u0010瑠n�\u0006#�K\u0019��E��\bR埸W�����Y��T���w\u001a�u*B��%�t�\u0000��K���\u001e�$6��y)��ʸ^[�u,�&\u0007(���񩦊X�6���5������t�^DTP�nF\b3묋�\u000bx`���\u001d\u0019���-!��V�5r��[�u\u0014�K\u001cѻi�w\u001f�\u00166w-\u000e��\u001c�#x��7L2\r]�\u0019\u0015oxSN�z�뫘�l�m\u0014��B��H��3R��fP�Ç:��)�Ƚe����4���(��\u0002\u000e\b都����S�u�/uE�c_9nt��>K\u001b$�n�$�LG�\u0015a�y�]\"�!���\u0000\u0001�%�i-DGJ7v(X�p�[4\u0000�/~I�N���e\u0017R8�,��!s2�q�G��7�lu��<��W\u0016���'T�\u001e�O\u0013�2#i#�Mu}p�|޾�\u0015s\u001cw-\u001d���5�_%���7Dw�����m\u0012�d�xTf{�u\u000ez�'�4R��fNF� �wnW�o`�\f��O�n�\u0014�J��q�����Z�^1?�S�\\�4�G\u0016T7w\u001a�����\u0005�C��$�]N�A�\u0010�w\u0001Rȫ�����;����g�^\u0006&�}TѶ%��N\u0007�ai#Cy�݇_\u000f\u001f��C�/\u001f�\u0019o��zm�L\u0017�\u000f!V�XN�4�\u0003��kI�9\u001a��\fDN����h\\�*\u001c�/uI-�iRr���\u0001��+\u000bY�8d�\u0004�|�Y��S]�\t�;λFO\u0004\u001f֘l��òq�o]<�\u0012\u0019f~l�\b8#��#���\u0011�Inb���\u001c\u001b�w��\u0013\u0013\u0015�-��{�\b�%���\"�F�R%��K\u001aH�S�~�E�E\u0014[\tc�v�\u001aTT\u0016� �\nu�<�u5�\\b�D> T_�\u001fe;\u0019-�����'�p�¼�6>�S�0�\u0018�W�wU���\u0000h�}C��m��U�� v��چ�?����a�b��g�l�96�����\u001ch����u�G�B�n[�(�̸�K�\u0000.�i��2ǀ\u0014\u0010\u001c\\n�푹խ�9�N�>p��Q�f���[�9�\u000f4��T�\u0012p��P=.T-#8��[�?�\u001f�˳z*��\u001coeM+��Fo&�8\u0001��ŉ�\u000b��ӈ�\u001c��~,�Q�[|��*\bfoȧ�]_�:��=��U�Q�q�5�-.\u0017L�\u0017�3ί������!�I\u0018*���մ́\u0012\u0011����\u0018\"d�\u000f_x��\\u\u0003e>ow�M�+y�:��k�_�\u0004[�^�\u001a���O\u0017R?g���j�?�FO�ki�3y�փ��\rC�\u0010u�Η���~�%���*�m9�y<q��\u001eKĜ�uХC\u0005���\u001f�z�\u0000��?季�.��v�1��kT@\u000b؆c>���Q�VY� �T�\u0000<���Q|�E\u0016��߽�\u0000J1H�\u001bs��\\\u0001�Q~�}�sazä+\u0013\u0013c\u001a��\u000b�q��a�}%�\\�IG?5\u001e|;�k���yGW/F\u001d�4o\u001c\u0000\r\t�j\u001d���p4��\u001f��V��譗�d��l���N|�\u001f�|*)�\u0001�,�o\f��\u0000˯�i%q�m����Q�ړ@�\u0011��N��.h\u0015���>�[�\u001er�����%�\u001e���~p�\u0019�\u001dkY7��ڢ�SԷ^?8�vo�E^���e�<��o�u\u0017VU\u001fm~5�\u0013\f�%\u001e�x�m�k}�o�\u0000,?��vM����\u000e{ǣB�@�\u0005ѫ�W�\u0000��AO|���\u000e��4a�3[�,$���&�\u001eʚ.\u001dm�uo��qO7'��ɳ�\u001cjb��1[I��m�\u0019�G\fc.��\n����!�\u001b���=��۽�R�'PsRE���\u001e3����\u0018x�������U�mn>\u00035��}\u0006��ku.\u000eFc�~O����x�ˎL<G�h�\u0000����*�pH\"��q{\bă����\u001ai2�M��S|�����'J[x� \u001e��h/��-Ⱥ\u0013�+��N\b�M'J[t��z���\u001fp\u0018�v����3�z�*y��]\u0018,��`�\\Z�t0�Z=ޡ��_�-d�y�ؗ\u0019��QD�\u000bp%]A���Qmn�����`\u000b��ƞ�Fݓ�_\u0019�j\u001b�o�A\u000b�\"':�d�\u0016�\u0000nk�����\\����]\u001a�.�q�\u0000\u0018�,�E���F���O\b�,���ӌ��U�V�}7\u0015Ѥ���v�Wkn-e\u001c4�-RA(�\u001c�U���=$\\G.t�pE[�GۉÊ�����{�V3S�?jW-��Ot\u0002��!\u000b��͙}��4��qQy�u\u0013�_Hƥυ\u0012��\u0016Ү\b����yo�\u001b�\u001da�_��l�t\u001b\\y\u0010����Gt!xaƆ^\r��t���D9\f;�k ^E�U�����L��V.F~Bд���\u0016iH�i.d�[����:Nj\u001d��b$��������J�}���\u0006�n\u0004��0\u0018�\u001d��CH%�\u0010��usd_w�M:��P�y�}K�0\u0018�=�qp%��HUy\u001fmB�x X\u0014�2��������Y�*\u000b9'�&.\u001a��\u001b�{��w\u0003Z��\u001f]5��\u0000�\u0016��_N�\u000f�_�#�\u0011<0iݲ�ld������$�)O��{+sp8��\u00075�ck��YA*�`�q.\u0003;\u0005\u0019��\\���\u001c�\u0018�Ͳ�A���a+�3먮��Y\u000f\u0011��£��=G\u001cGz�\n���\u00166�\u0012A������\t�\u0000�����>�Z�8�1���\r\\�\u001cf�HO�t�&�I�����\u0007��7\u001d�q\\6�����\u000b�����3�˜Њ\u000bɢ�|�n\u0015�B��8�rz�W�σ�? �\u0019\u001a)\u0007&S��-;��{���\u0017\u001f�Ann��G �n�q$\u001a��lf�HO�t\u001a�w��Z�|�\u0007�I�t��g�?��Aw,Q�*�+������V�OI�k6��\t�\u0000\u0003b�\\�K2\u000e:]��\u0010�y4q\u000eJ�7����\u0010_ɼ���\u00148�������\u001a�!?�����'��[g\u0014R��XT�\bد�\u0013�\u0000\u001do.&y��s��Aw,Q�*�+��\u0000�[ۉZi='9��+ْ5��QS>\u000f\u00025Б\u0018���Ý~���:�o�#���\u000b�㦍�dn\u0004\u0017�\u0000��?�[˙�w�9�\u0001��|\u000f�����Y�祛���q$H��F���;����H��[����<p�\u0000pwq�㞕��L\u000e&��6�<F���x:M��D�\u0013v�\u001c���d�%FI�տF#M]�͚�q\u0011�O!�4�\u0013Ʀ\u00068�Dᖖx�U��&W\u000b��[gfݦ��y�@�'=���IѴ�ռ\u001c��A\u0012�$�4�\u0017W���[lK\u00165�8\u0002���\u0002\u0013�\u000e3�S��:�v��\u000b�c�ݙ��f<c\u001a�9T\u0002��o\"s�C\u001cs館�ؑ�\u000b�\u001d�G!�\u0013�*��\u0000g3Kcs�*x�'�oz8Ν[�c^=���q�n�\u000eH��\u0017�\u001atm\u001a�o\u0007*I�\u0005Uq�Wp����\u0016\u0013��\u0002\u001e�^ ���X�\"v��\u0014{�\u000bg�̓�l�ʷ����8��\u0005~/�����5İ�D��\u001b�����[\f?�����4L���\u0012\t�\u0012�\u0016S�x{\u0003Ƒ���9Ƥ\u0019��6�������ƍ�@��j\u001b�\u0017�������IvL+u�:����宭�slko��k��\u001f����mv��CΦڏ��im��K\u001e�;����c�6�\u0003;����d�\u001f̜H�t���Z�\u0017x˭N����Զ\u000b\u000e.�\u0019ds�k!\u00003*�l0ң�j��DU��%\\:��Hм�\u000e\u0002��ƚSn\u000e���\\\u0017\u001e�\u0017P[�\t�Kc4'��̟���R�C\n�O�28]^ʚ�-��\t��8�-��\u001a\"-�:���\u001b0�\\�W�\u001e������Z�\u0006����ǭ[F��P��s<\n5d�������e�\u0012~�hq��w�!��B3\u001a�Թ6ՋL�\u0012jD�<*��e�>̉t�X���ղ%\u001b1������F]\u0007\u001e������j֭�Փ�=��BM�t��㴸��\u0015��w�}�k��\u0000��I#�y�Ζ\u001cq��\u0002)c�^\u0000z��qo$��Q�\\����ݑx�ӆ�R�8�\u0000Z�\u000eÖ���\u0004�\u0012��1�\nڻ2�U\u0012��1\u0003�V�\u0015�6\b|�n�[����cr�\u001e[�\u000b�f�F���8W�\f�6��G�u\u0014��>>5��N�e���_��Qw���y�]�u����_�+�Viӫ��/��m�+=�����M3\u0015�ύl��\u000b��̭�g��R]\\��g�~!w�\"�^��F�z���Z�Rfk/��\\���e_l��Rt΃�\u001a�{\r��\bDh���V�6\u0007��\u000e�X�ѫ}�v\u000eւE\u0003|�`�����\u0016�X�6��I���Ŋ�<O*�\u001bN�M��ţ2p�\u001c��u<vF�Zfimъ��z�U�f�g\u001d�mm7�/&\\�r��\u0015\u001f�Z���\u0014x�����;�ypdc,A��0;�����c5��S�\f�Kg9�5��e�\u0000�!<�V�iD�=R\u0016'����\u000b:\u001eL{�����j���ND[�\u001f��ʹ�e>с@0�20���V��ӡ��\u0006ϳ>����Jz2�;h+ǟ�H���61�V\u000eғ�\u0000���-��9��ݭ^����BFY�\u001c\u00101�p�WG��t��p\u000e=��Xo�Pͨ�\u0003�社7�����\u0007\u0013N�׮��%H\f3逸��A4ݶ89�q~៙ҿҤ�����N�`u�ܩ��\u0006*����+�Z�a���X;FOp\u0003�,�4�\u001e%���G\u001bFM�1ݟ��%�R\u0015�\u001bP]Iss!�y\u000eY�}\u000bx/�a\u001c\u0000 \u001c{3L�_:�mg \u001c�}Ms\r㤳\u001c�xa�ܪ\u0001�o�3�佔�\n�m�����h�A>�\"�`���gV�W[5���w��@\u000b�n)���f��AM+������|�\u000b��]+�}\u0014��_4p�\u0005]+�ꮟ\u0014�.�[y���\f�.�[y��󦝜�������wcQ�u}8��G.�ĳs4�G~�\u001a\f\u0001��\u0001ww,�|�<>�f��x\u000bs\u0003�>�\u000f{pӕ�\u0000{�6y��4mb/]ol�\u001a\u0007�^��yo����8\u0000\u0007��\"��<�\u001bR�\u0003\u0007�F�K�\fD`�\u0000�:�O��[^\\��?ٟ]n��\r�!�\u0000\n��\n�Z޼qz\u0004\u0006\u0003驤��@�\u001c�\u001c\u001c�4�\u0017R\u0019f<��\u0000�`��\u0000/\u0010\u0001\u0000\u0002\u0002\u0000\u0005\u0003\u0004\u0001\u0005\u0000\u0002\u0003\u0000\u0000\u0000\u0001\u0000\u0011!1AQaq�\u0010��@���� P`��0�p����\u0000\b\u0001\u0001\u0000\u0001?!�\u0000�7�+P��@�G�Z1b�\u0011|\u0019��\n�sqeZ �t�\f\u000e�X#\u0017\u0016��19�(\u000fhC\u001f\u001f`l���M�8�K\r�W&�\u0003X\u0014����tq��r���\u0013�~WS�U&�t@�0\u0006X\u000b��>ɭ�\u0010�X�4R\u0005'�?~��>��t���\tS4,Z\u001b���T����e\u001f�\u0007rV�\u00187!�\u001f�s/���oj�A��\u0003��֌����g�e/���u�ԧڨ䖰͢��U:�\rK�\u0006e5�?`Rs���{�\u001f\f�j�.f��+\u0018\u0007p6��%�R��`\u000fWθJ��\u0003(\u000e��\u001a͟�\u0010�`��\u0015v.j6|�)���\u0005M��\t�3��\u0011�\u0012'Ѯ�6�]�]�f\u001c�88ڏ\u0012�[�\u001c��\rGhw/\b�\"�3��\u000ebg;ӌ\u0013�]`L��P�^\u0011�\u0003c�̽��)\u0007���w�#�z��ff��v+��7\u001d��R���1\u000b���\u000e\u001e��*3�\u000b�z�\u001d�Śޝ)\rf;�Fk�=��\u0010�\u0002Ϸ�22�'/7\u001f\t��rYE�\u0013�a�����D(c;\u0017$s�xAV��\u00060�AqB�s\u001b\r�\u001al�X�\u0003\u001a\u0017gh\u0001\u001c\u0012�\u0002:h0�[a(��f\"�uQ-\u0011Yk�J���~\u000fA�Fvu�WΣ1y^�A�7\u001a�D�;u\n�=G�v��Pڠ���p����\u0013U��\u0000,@�H�GJ]%S�1\u0019�\u0012�\u0018Lb�r\\L���.Mh=��/i����|ce�:/\u0018�\u0018%�\u000e?�\u001e\"���?�3}*��dS\u0014��??쎢��]\u0012��SW\u0003�{�GG%��z6>)�6tEã��%�z�\u0007�\u0002��\u001a���\u0004�<\u0011��\u001ctpRO��\u0004���hZ�J]\u0000�������\u001f�׈b\u0019�\u0000Ks�5{\u0016�*�e\u001b����b\u0007�\"�q���\u000f{!��\u001c�\u0019���8d/\"l�\u0018n�N屝\u0011�ˋ�W騄j`�XyK����b`�W�\u0012H\u0002\u0004R�vrYTQC@�8�\\�v6�9�s\u0000S���2�\"���\n��n�����q\u001d\\EU�H�\u0003Yq\u001a�0#\u0015J�\u000e\\��������b�\u001bº�#S���\u000e�Y���\t�\u0019��\u001c������fiM\u001d!��M���\u001f��j-\u0000d���\b7��n��]�%J\u0004�n�j�jvPʥr��u�\u0001�,Sב6�\bU�)^���\u0001�jh���q-.�8[u儔\u0002\u0004R�vJ��\u001a\u0005�8����\fZ.wV\u001e�J�\u0000\u0002�j�\u0013�\u0019�wO\u0003�\\El��\"�T�Wk�\u0004N��\r�B��>ŀT�Mn�\u0007v�h�665�]�\"^\u0002l�\f�\u000b��c5�q�L:���f��9�:��N\u0003���w#�T�1{Ԛږ�d����\u0006�ѕ�!�qܬv\u0017���\u0006˻]�\u000b\u0017\u00065�]{M�B��=%�\t\u0019�4a�\t8u�F�\u001a�)\u0000�\u0015�-\u000eP�E`��JZ�Y���\u0000�@n�(�u��tE1X�\b tB��\u00152T\u0007��\u0000�\r�M�\u000elK�t��\u0000�\u0002\u001a�>g�V;9��\u001d\u0015��\u0000\u0002o���%�$\u0003�\u000b �缠P�W\u0018�Ng�}j��^&\u0000���\u0011r.�dK�������0��W�2Pl�\u0013M\u000b�d(��ï�2}e�7�\u0013�8Ǚ�m��i�Zm�e܏�_��I����)�\u0000\n���`���G}�\u0015���D���\"\u0003Vs�\u0010Y�~%��і\u0005'�\u0019�N\\]G�N2\u0011͚�Y�\\��\r�[݌8�z�Aw���]�q\u001c���P\u0006\u0014\u001f�m���M��h�\u0010־����l\u001f�I�\u00004�F\u0014�k.(}\u0006���\u0001X\u001e~����9�\u0019\u0000�\u0001�Dai��u��:J�΄\u0016�υ��UnJ\n��}TFڕ}R�Wi�\u001df�_�<�Y���G�]8���x���Y�EqRS���l&���Ya]`�\u0001�17��\f�7&W�9�OG\u0018;O�WДx\u0004p~aZ�\u0003�C�2W/\u0002�y\u000eS\u0015o���\u0015O��\u001f��/�|�F��\u0003�T^�(YW@�&\u0014Z�\u000b]�Ҫဦ��F���0�PƎk�E5�e�s���\f�N��a\u0000�\u000bၩt���.p\r�����Uv�Ye_\u001a���&�\\��{��J�Wi�\u001df�_�<�QS)��O^�\u001f��\u0017�D՟u���\b�=\u001b��s��Z8-wx�9�<�'���\u001d�\u0016'\tZ�\u0005\u001cZ�5s�\u0018\bPlSNld])k�����m\u0005���S�V\u0019��.�Q\u000f�wI��m�D?�K�Ɓqp�8�c\u0003وA�ȓ[�!o-�~�J�G�\u0011Y�{~����9�\u0019@�jp��~�\u0001����\u0015\u0004���w���\u000b�'�\u0003e�5���\u00006f\u00114O[\u0005J�\u000f�\u0002��;Ũ��\u0013!��Ձ�~��\u0000N\b�3�\u001c}J�Wi�\u001df�_�<�Y�\u0014l&J��q\u0003գߌ~B3(����}OtW$���*�s��\u0013��h�\u0000�p�^ekXJՂI�`�}�N�f\u0018~�\u0000V���SU���\r\u0019p�ݥ����.��Ip��.�}A�ۏ\u000e\u000fO�\u001a=0������W_ι�Kg�\u000f#�\u001d�\u0014�c�j��b\\!��\n23w��\u0006K���aۘ_\"\u0005�*\r,�\u0010\u0018S(g���_���=�-��n�&�H��<Ʒ7�\u0000\u0013�]=\u0004#��\u0003��l�l���~�Y��\u0010���\u000f���Gk\u000f���\u0000w(��Lk����鉩��~7�=�W5�_\u0011�i���\u0000��e�\u001e���\n�$���\u0016n\t^|ȭ��m;>\u0015\u000f1q\u0011Z\u0018N�v�\u0002�\u0007Y�\u0016*�c�b\u0011�bĭ)8\u0003\"�l�\u0011�M����w�\u001d�\u0013r���^j�2jp#�ߏ�\u001al�l\u001aN\u000f�+s)j&�0����\u0003�\u0016��(f���k�*�b��r�1�X�}M���EMg���uge���:�2��J\u001d�8@9�\u0005\\�o��jm6�D�H'���$�\u0019E�|F����󿩹#��ƍ�[\"!a���Z�Í�r�o���ж��B%򕤟�3�o�~���^vV��r-='�\u0004L���<�����\u001el�Ӫ*0�sa\u0017ޢ���eA��wt-���GS�~\u0013�\u0014�\u000f�F�\u0002p�Vn�\u00063���4T�~��됓d��.M<���\u001aS�\u0014\rq���ko�\u0011.�5�[���\r\rh�\u0011m�]6�\u0001\u001e\u0017��\u001c����+��l�Y<���e�����0�_��v��\u0006���V�\u0005E�G\u0015m�\u000b�s�\fWQ�z_,ԕ\rf�����\u000fLn��\u000eKI�'j -ϡ�\u0019\u0005\u0005����ټ\u0007�}.�\u0015A�ֵ\u001a~2���{�!�\u0011�:���u-�v�\f����ܵ\u001c�?s�pD7kR��^}H4u*\u000e��ƕw��\u0002�7\u0007�S�\\.b(N=��B\"�\u0002˨��[)s^�s\u0002*\u000b-�$yf�\u001eg\u000f��(�ث��\u001f�Ņ\u0005�'��m�\u0003�\u0004\u0015۽|�÷�\u000b�ʇV\u0007c����\u0016\u0013\u0002�2v��H�;�.H���y;}��%@d�\u0016��4��_x}Cw�E\t�*�Wĳ�;NP0�|�� �C����l״\u0017����C\u0010��\u0006���\u0011�v��3u�z�U��ׂ�\u0018\u0015\u0017\u000b��\f�4N1\u00103�\u001b\u0018�i�j\u001fϘ[�!��?wң����r��Ր$H��|�)����\u00150\u0003�.\u0016�\u0007�\u001d��\u001b����y����Q)�r�P޵����n\f\u001d�c*K�\r1}\u0004\u0007�0�a�\u0019�E�ݪ1��\u001b\\�t$!�O\b\u0014�\u0003�%\u0013A�gѮC3\u0014�Q0��\u0003\u000e�\u001eS��BܫPo�!:�6\u001c���\u0007F�O�\r�#h��>=\u001b�\u0019��\t�\u0005�\u0013\u0003��ԉ��m0\u0019�ʡ���D����DR�\u000e)�N��#qC�'�R���X�\u0005J� \u001e��ɻҊ��#�GZ�/��\\��\u0007���2|�e��V\r���]/\u0017/�X��Mj���0��TK��sx\u001f�_��\u0002|�r�o�\u001b\"�%��F2�r/2�m��Bh\u0005�El��\u0000|,z�˃�\u0002}7��{\\$}\r�\u001e_�\u0014Ճz\t�0��\u0017\u0005\u001b\u0012|�����g+\u000e�6���Ӫ�h\r�\u0014�Ӻxϱ1�|\u0011|���\fà��ߦ����{TXK\u0000�l{�\u001e��\u0014�\u001f#�\u0015�\u0019�V�Ì�\"�`&b5vڡy\u0004A-S��~��8���?9F[J�\u0013\u0017b�\u0015(tb��dZ�\u0015�������+�4��^q{��x�Ȇ�����r\u0015f�.��w�\u0007�}\u0002�+�\u001b�G��J�����3�v8�/�돖�_`9�R\u0000*λ�p�����Q[�\u0000��2y�)��\t֞�Z���_�_��20ɒ��t,�\u0003�|�+&Ș�P(��#5a\u001f=u7�5\u0002���\u001b}��\u0016\u0016�\u0003�\\�4����e�\u000e\u001f��Cs�U�y�O�\u0000\u001b*�N8\u0014��p�r��{���\u0010��~\u0019h�疭��ۮ�>�z`����_����������{G����Q�y��\t�ZL�\u0007&[*R�+�������V�O�ۄ�2Ӷ�^�箥��\"�\\\u0013\u0017�M,�0�lޛaͷ����\"�(q �x~��@�qV�\u001d2�)�h\u0003�\u0012�\u001c\u000eD\u0018fIB�>���\u0000u\u0000x์��W\u0001*ᓰ����\u0011I%H�ᒉȸ\u001e��v�U�����J��T\u0012�B\u0016l���[�$6h�:�\u000b�ϵKX\u0010q`6Ҭ�2ѝV8�㯌\u001ctTI�J�FkdQL��i\u001b1�a�]�m�9K���\u001d5-�,�-��ك����Taa�x��$�$���͖�F�O�\u0018\u0014\u0005�!���\n��֣$G�\u0013e\t�2�,�QL���72�x�WW)Գ\u0010�rm77��\u001e��׵�\u000b�=�4\t^�\u001a��2�P��D�y�i�N\f\u0010t1��V�\u001e��d8��\u0000\u0010\n$��1��t�+�J\\c�Fpw �����j&�5z�.\u0003ù��ی�(��[+}f�:M�\u0003����w3Y-�[y5ػc�V��5�\u000f�u�\u0000S5\u0013\r�\u00040��v�5�S\u000fǁ��c�Y(��R��;��V�\u0018�\u000b��C�t��LE����fCK`��m�q���?�\u0019U9�����F�\"[�-�ւ�������;\u0018찶s�S�1�\u0014�.K�.�V̏��\u00001XF\u0017��\\\u0004\u0015��\u0005�\n�\f��� �-\rqQ�\u0014�\u001e���w�`e.�gHCA\u0012���L#yy�Õ%�\u0015[r�?�!\t�4o>�+}�E�j\u0001�ō\f���[�OC��\u001a��\u0019��|�\u0017���\n�EN[R�f�\u0010\u0007�c�PAbV�OL\u001d:�TF쨻�⭶���Ƃ�{P,\t��1��!S.~�+\u001e�5D�a0D�\u001a��\u0019%��4\u001ew6��3�n�6��\f\u001b[)&�4�\u0001�\r\b)t\u0010T#IĔb%\u0005��G&�鸞\u0000�\u0000�T(��<Vn\u0017\r�?�\u0003!E���D SA\u000fZ4=�y�\u00007\u0005{+\u0005��.��\u0016��s�zh\rCດR���djo^�ۅ#\u001bD6�\u001a ��\f0��\u0012�\u0007���\u0010����~%�YS�\f��o��}\u001f���\u000e �x\u0015^�a\u0017�����\u0010�,_\u0011�\u0001�_rざ%��B {W�\u001d9��[\u0014��̹�k\u000f\u0012��E�\u0018n�Dj�/\u0006�0TYx�\u0011푞���\f5�M�Dk�\bU�Ȗ��}�\u0003���\u0016\u001f1m\u001b0.!�6���\u0007M�C*\u001e\"ܞ\u0004|C�¡�ɛ�@׷��K.+\u0005�w�\u000e��\tL�\u0017p&\u0011�N�õL>��9*-�8\u0000��; Ϭ�8��p�mT��\u0001�\u0011�,?�\u0012mX\u0004.\u0000�\u0010쇩�6�e��\u0004;F\u001a��MF�\u0015�M����-�\u000e\u0018�%���\u001b��)��,V֣E�FalE�y�-]u���rS��c�\u0017�7\u000e�\u0000Z��L=k���UA�x��sP�h�M�;�wr\u0016���\u0010��g�.\u001c�J�g��e�\u001b��'�2��\u0001��E踌Jf�m�\u0010ՉtT����X\u001e-�e&l{�wS��C\u0010�\u0002_�\u001b�\u0013��\u0000�R�)QS�voR��'\u0001����ӈ\u0002�\b\\�zp�T`��o����\u0011�,Q�u���f�\u000f��3�\u0018�\u001cN.sw1����df��ra�~%R�ڪ�g�T�LkB�ؼ���\u0004�\u0000�\u001c\b\u0016�N��O\u0010q���s��\\JY�s�\\\rr��\"��=�H���}�\u001e�\u0010���\u0014���=of��L��I/����\u001b�O�UT�n�g\u0019��Śh�a���$>�Zy�3\u001a��M���\u0015�h�ޭ��bXi\u0012\u001c;�\u0019\u001a8���M��\u0002�,\u0014��U��\u0010��\u0017˂�#n5�T,d��9��x�U�\b�\u0001�\u0012��Ii��o��9q�*\u000b�QM]>�a��7��cش�\u000e�F�\u0016��F�Vt{Ô:ld���\u001c\"2sfP@\u0004\u0016֌Bٸg䂞\"����T,vL���ϲXF�Eأ�\u000e����^%P8��r�\u0016��\u000b�.\t���\\_Cn�P�^P\u001dM\u0014��\u001b�$rh�ŜjF�M\u0012��\"\u0017\u0006���-cT2O{�J�iiՅ�\u001a�Az2��bp\u0013��\u0010�'�F�����\u0014�;��\\f�S�u\u001c>e�,\ny��![\u0015I�\b\u0019K4@�I-�;\u00055K\u0005+2ĩp;\u0000�\"u��\u001a�\u00003\fW��� ���\u0000�\u0007��\u0000\f\u0003\u0001\u0000\u0002\u0000\u0003\u0000\u0000\u0000\u0010\f2�\f��<��,q�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\u001cp�\f2�,p�<3�\f0�\f>XV\u001aC��X��C\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\u000b5\u0007��\u0019��\u001aО!|0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f �\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f2\u0003\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f1R,0�\f0�\f0�\f1��\"C\f0�\f0�\f0�\f1\u000e\f0�\f0�\f0�\u0000�'\f0�\f0�\f0�<0�\f0�\f0�\f0�\f0�\f4h�0�\f0�\f0�\f0\u0000�p\u0003\f0�\f0�\f0�\f4X\u00000�\f0�\f0�\u0002�\u0017\f0�\f0�\f0�\tc�i|�zd�\f0�\f0�\f1��0�\f0�\f0�\f0\f\u001d��\f0�\f0�\f>\u0001%�4\u001c0�\f0�\f0�\u001e�\u0016\f0�\f0�\f0�\f6�\u001a�{�\f0�\f0�\f5�d0�\f0�\f0�\f0��\u0010�\f0�\f0�\f8��\u001c�0�\f0�\f0�\f/p\f0�\f0�\f0�\f0ˌ<��8�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�4�A\f��4b�\b\"B\fs�(c�(qM\u001c�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\u0018Gx�'�)_�\u001a59\u000e\b�ͧH�\u001eS��#\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�y����ڴE\u0015�3U+�\u0000\u00030cEr\u001b\u0004/v\u000b\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0��<�K4�4Ì0Ӎ0��8�\r4�0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\fp�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0ë!�\n!'\u00067F�0�\f0�\u000f#��b���\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�K,�J �L,�H0�\f0�\f(�L<�K\u0010�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0�\f0���\u0000,\u0011\u0001\u0000\u0002\u0002\u0001\u0003\u0002\u0005\u0004\u0002\u0003\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0011!1A\u00100Qaq@P������� �`p���\u0000\b\u0001\u0003\u0001\u0001?\u0010�\\��_9q�7/��y3*�J�*\u0003\u0002T�Uʕ�g$�\\J�\u001d\u0015�\t+�*U\u0012�1%C�Gk�\\}�\u000bV|����Y������\u000f[�=H�D��ՙ=\u000fڟ�%���?��Ӥ�>\u0000\u0014`��#î)��\u0004Ft��\t�|e\u001f|wH�q,\u000eMQ��ǧC�\u0000��i�TwG���~\u0019^��\u00112{��\u001aS�\u0002(\n��=b\r�5�?1�\u001c��_a\u0016\u0005aI�G��\u0014�\\�>S��{��C�B~s?���\u0019}7\f�CVʗӞ�!��\u0015o����*L������?nH\n�#�#�R�^��C�z�X߫����elS���n\u0003\\�\u0018I�P����*���`N�,��}�\bC��'���{�\u0011�F l��O�aYW�w\u001e�5\t��c�S�s�U��VH�n��\b��L&\\_%���z^|i<@\u0013ʳ�S~�/!��]�7��K\u001c�>�;iZ�iw^��\u0010@ij�c��g\b�<�T\u001b�C��M�~t}���\"�p{\u001a��à�����\u0003�A�\u0007��u\u00147\u0004u)�(nnR�(n\b�S�\u0003��q\u00147\u0004u\u0000�(nYW\u0000�]t��\u000e�u\u0010n\b��<%k\u0013RU�0fZ0��a�j*�Y\"��\u0002�+IE:\r�9\u0013\u0000����t�\u00137\u001cEd�%�t\u0019TR�|�\u001a�b.#�\nQ\u0011�����\n�Y�<\u0011��-��6�PG$�r���Des\u0005FB\u0002�\u0012�\u0012�c�\u0015Ө7�\u000bJ���GJ:Q։G�Q֎�ҥ\u001dh�u����\u0010x����[~��\u0014��RfZ���7�\u0011Q��GD�h����\tij�]g�42�D�Q(�2��\u0012�\u0000�vh�(e\f�R�D�\u0014nQ����\u0000,\u0011\u0001\u0000\u0002\u0002\u0000\u0003\u0006\u0005\u0005\u0001\u0000\u0000\u0000\u0000\u0000\u0000\u0001\u0000\u0011!1\u00100APQaq������� @`��p��\u0000\b\u0001\u0002\u0001\u0001?\u0010�7|._�|._l_�r�_\u001b�����t��\u0005�;\u0006��Z�)]>�\u0000� ���\n\u001d%_(�Vd\u0014/�\\*x��\u0000&�N�?�6VV}5��������4\u001fQ*\u0005P\"��LG�m�\u00015oyӰҖ���\\�gם�&�Ơ�\u0000\n�b0[C]\u0019�w�Ɂ̺�'�!�/����9�S���a�'G�\b�{�����Lᦩ���?\b\u0004���F��W��\u000e�\u0017�\u001a}�\u0003}\u0000�\u0002���f2�\b���Zl,��*\u0012�,8��A\r�_B�!�i�5)o���s\u0002��)��{Tj+�����\u001f\u0019>��<9�B!y�ɞ\u0017�w���^�������K�_ �_�\u001aLZ=5�^\u0015\b�N��N��}\u0001\u0005CJm��V� ՗\u001d�W�x�ML��\u000b�+(\u0013�ߎ��\u001a�=_7}�F�\u0000���e2�\u0015ƙW¥\\�L�\u0015*�W\u001aep�S¥_m���}xxCq��\b�ú\u0018�j\u001e<\u0007\u0012�����Xb8fȽ\u000e\u0006�S�ex<\u0018\u0019��Y�\u001b�I�l�c���&�b\f\f�n'XjTZ�s57�1\u0006�\u0000�D�Tʕ�ԩR��*QɬLp7*Q*&eJ���\u0017�o�|����\u0000��\u0000/\u0010\u0001\u0001\u0000\u0002\u0002\u0001\u0003\u0003\u0003\u0004\u0002\u0002\u0003\u0001\u0000\u0000\u0001\u0011\u0000!1AQaq�\u0010��@��P`�� �0�p�����\u0000\b\u0001\u0001\u0000\u0001?\u0010�\u0000�?TD5\u0004\f2�����5Ӗ����ӄE�*L5F�$E9;�D��\u0001�Ga�'&���\u0000�z���s�GN�s���`��ǁ4\u0005x���~l�i\u0017�j�YI\u001fEMs�v&��T̆�\u0000۬\u0015�������7��\u0007�(\u0013H\"\u0005\u0011\u0011G\u0010:\u0002�D�:��\f\u000e \b�\u0001\u0007v��\u001d���̜1��\u001a��\u0001\\����\u0001��ky\\C\u001b\u0012Á9��Ԃ=�\u0010�S\bb�\u0007�\u001cʊ�x�Ϝ8����\u0002�Cy� �H�t7\u0003�\u0019�\u0005=O���qF�\u0013��b�Z����p\u0001�ȓN\u001c�\u000fo\u00186�\u0018� �\u0015\u000e\f��4$�)��&�#5�\u0006|�\u001a4ܽ� ���\u0006ٲ\t\u0017\u001d�<|g\u001f\t�VGt��q�\u0011; $�\u0000��\u001b�&�m�<�J��\t�P��\u000eݎ�m\u0018!x\u001d����\t��mD� �mZ\r\u0002�6zcMxPVD6�~�Y�\u0000B��\u001e���4<�\ba\r8]�O���,�!\u0017��(\u0002��b3�,��FX6�{�@\u001d�����bP�\b\n�A<᪀vn\u0019\u0011�`*R\u001c^/�\u001d��\u001auY\u0001�D%9p\"L\u0004y\"|�A^\u000bȂ6l�+\u0018���|��jN�Ǉms���?LѾM`�T�R\u0004z�\u0007�!\u001e\u001c�\u001bf\u0006\u0019u\u001d\u001dk\u001c�밶n5O'\u0018+`|�i\u0015�nlӄ��B�\r�^q\u0014D³h����a\"\n)��|;�\u0011\u0002+]�/V0{̿0F�]3l\u000e���Y��ɝ\r��\u001e����}�)M\rk��.���S\u0007E�!�=4�&��\u0014�¸\u000e\u0017��A���\u0010\u000bռ\u00017.�c�\u0019A�(��n�ut\u0003s.����\u0017��N\f,�\n�3�\u0019�y\u0017j�le�R�\u0004����\u00168͑\bP��Ļ\u0007\\ṕt���ז�uڅ9V�u1�~\u0014ĭȳ����'�!��P�&�D�\\`�\u0018(g_\u0005C�1�0R�R����(ǚ\u0011�\nO���٘�M\u0002\u0000*\u001a�\u0001�0>�9\u0004V���\u0001V|��N)P�{�Z;�<b��\u0019j�\u0002E9���I`�0�/�\u001f��\u0017��r�r^p�ִth9���A��{\u0003\u0019�\u0016JR�\b�z\u000e�\u0018�\u0010/$]��\u0002z�\"Q��.3\u0001$\u0017Z\u001d\u0004��2i�`\u001e��v�\\ڿ�铸�4'\u0019|ld�V�z㽠�-_q�\u0010\u001cF�Q�1�a�%�駂\u001a��\u0011\u000f�$E\u0007��p۵\u0005��K�� \"���\t�W��4g\"�z�1\u0014\n�\r�`�N.���2\u0014���B�<�^�!^T��8Kv\u0012�sCr7��\b4�\u0017�cЊJ\u0006t�:��\u0006\u0001P\u001d�\u0018j�v\rѦh\u0017[3PR%�HB\u0000\b\u0010хG��n�/�o!2.~�C�-�\u0010B�\u0004Ȧ�\u0015]����\b\u0001\u000b�Sn\"`+�\u0001\u0001x\u0006��9��\u0002�·�X���,�ޱ�R���m\b �0��P\u0000#C�N���1�\u0000�l�NL00\u0005�\u0006���9f_`<�\u0002\u0012������6�DD�%5�\"\"TUA����\u0013�Zy?\u0016\u00022�+d���3'z\u0016�\r\u0002{\u001a��\bk\u0010i\u0000h�\u000e\u00134\u0016�}\"Z�9���$��&��C\\dr�d\u0016���0�V\f\u0002� \u0016�\u0000v\n�1�\nJ)�9'��(\u0002�;\u0002\u0018�V�`\b��\u0019F\u0002�=�~�0��\fh���K�B���^X��\u0018M��x��\u0014yF���O{O\u0000��|�.�2��$�Q\u0014*U�\u001d\rn���\u0012U�U�\u000e�E1\u0012�K\u0015N�)�F�Z��\\�\u0013R�\u000bMk9�\u0000��`zY��ł\u001a`yO�5͚�\u0014\u000e�\u0006�\u001b���\u0003(�D�SK1�T�ayn\u001a���E�J8��>�Q�\u00142غG`I�\u0002��%\u0002\bB�y-��4B#��\nI��d\u001aP�ŋ�MUE�S�ܡ\u0015I�#FyS���V�\u0010Pb��l\u0002*ú�\u0012�\u0018\u001a�\u001eTq�\u0013�eۆG7�j�\u0018,\u001d�U�\u0006�'\u001e2�n�u@@�\u0003����w)\f_8��)Y8\u0000�?�\u0000ۣ�����<b�~��נ0�U�-͒^�C�\u0012�B\u0007\u001d\u0003�:ɱϳ��\u0015\u001dy[3\u00121���'�*�\u0003\u0001�7�>\u000e3PCZ\u0004��i^W��ڽ9\u0014\u0013�ˎ�3r#��r�7e#���UN[�\u001c9�W9\u000f���et\u0004Q\u000fD���TH8��\rQ����'��ϸ~�0���e�!i\u001c;�ٔ \u000bnˁm��f-�t�={>s��/\u001d�.���\u0000��%e����\u001c��C�W��%}O�\u000b��\u0003t����\u0011����>�h�/�\u00141\u0011ç}=\fgM���\u00132���͌�\u0006�b��P�ΜzF�/ñ�ċm����N�\fp\u0002A���}��\u001f�n�<88\u0011���{~���G\u0016u�|.�]�8�\u0001\u0000\u0002\u0001��~�� 螦K�\u0015$���_� \u0012��\u0014�4�����\u0000�4@r1#�-o��8\u0013����?D��>�%#�X�/�����y>�%�\u0019��cʞ��O�=��\u0016\u000f�oJ�{�@Zs�x����\u001e_�Q�48�O�9�I\u0003oW��Ú1~��O\u0018~\u000e#\u001f�_��y�\u0000���\u000f��5.D:5�\u0003�$\f~MTx��%�\f?�B\r{B��9R���\n�q�\\h&\"t�)��?̓��\u0011\\P�+Li�+\u001bRwpÍ�� ��WFA\u0007��\t��\f\u0012Z�M\b��W����\r�׃�\u0007\u0000�Ft\u0004\u0006oX\u001b�<�ˢ�t�\u000eS\u0005��0\u0015z\u0002��[��mM���2���<\u0002m\u0003\n�\u0005�\"\n\u000f\"'�4OE\u001e~��}\ta��o��\u00009��a���B�)@N��pU�i)�C��\u0010\u00152Z\u000fs\u001c\u0014��\u001c��?������ȅ\u001f���\u0005>\bh\u001f\u001fAƃE���r\"�`h<��?�����1�\u001b��}�(��(�}��|�T9(�\u0002���\f�v���=#�\u000bJ+\u001b�<�<8t\u0003��\u000b��\u0012�\u0004���'��\f�\u001e�\u001a&D\t0i/v��\\g�t��V\u001e�c��|�{���\f�]x\u0001\u0000�}9�m\"��{{\fc��\nXt\u0006s\u0014�5�\"}�'`�s����\u0016��\u0011.�)��~IT��#��\u0004�\b��`��r�_G�\u0002\u000f*����\u0000?G}Ϣ�T\u001fd�_�O�\u001f�x�LK�z��Y\rK��p�\u0010;-���\r\u0001EE.��!���차��p&\u0013���\u000f8��S����A�\u0016_i������ٓN\u001eW\u0013\u0017�|��Y��/g�+��`����H��-t��ܣ\u001f��G�0�\u001c�F?�z����\u0010 t\u001eU�\n��0[�\u000e�����c�\"����i\u001a\u000b���>�l��.=�|�9�\u001fF���d���\u0019�3�g�×��S\u001b\t\u001f8�\u001d��\u0001�_\u0018\u0019iɇ�\u000f�ŅJ�%\u0015xA\u0011a�\u0014\u00074�>�~\u001e\u0010\u0012\u0007�\n~JW�z����Ҹ\\\nN�u��*������}h�q�>��\u0000��Z��Ø���~p�\nħ��\u0019\u000fX\u0014\u0001�O\u001aʰ��!�`�\u0014��A\u001dϸ�\u0018,V$/����\u0011��\u0010�?PԚO�pr�\u0013���*s\u001c��\u000fL4�k\u0017J��x\\\u0005��\u0004��\u0005����c�\bg�qi%�@\u0013�q����l�\u0010¶o?�x�B\u000b�u���\u0004����eq\u0006�3�1�\u001b��@�B,�?QSQ_�\u0006\u0003�\u0000\u0019�\u000f�be@6���\f\u0016\\]\u000f�\u001e�vpT#\u0013bc5�I� m�\u0017�:\n�\u0015\u000f\u0004[�.\u0007\u0017v'��`>G\t�� ;U��\u001d�xz�%\u000fl+����\u0001\u0006�;=\u0012�9��D\u0000�IA�\nc�H&߶\u0017_�n��*:<�\u0000�\u0004��y\u000b�\u001c�\u0019�Pm�a�H\u001c�[@X@�7,;���)謇��\u0003��|�\u001f\\U;h�\u0006�U��0^��Q��$Dh�aFz�G����),�G\u0018q׺���~�V�\u000b\u0013\u0012��\u0005>�w�{W��9_�r�\u001a��\u0001�\u001d�#y��N'�O@\r\u0007�x�\bz8��\u0003�\u001b0�:�\n;09g�0W��\u001f�\u001f��\u0000��l0{\u000f'<��]�\u001c^2�Y\u0001,\u0010��~��)B��%%�<��F\u001bz4h2;�\u0013�\u001d>`ɝ:\u0019{���k\u0010R������X3\faG��9L��\u0007m��J\u0016�\n��]E���n�����\u000f�j�����%:@Q5�\u0000\nհ8t�Y����T�Ѱ�OE3��\f�\u0004_����\u000b�s�,>>�R\u0001*\u0001\u0002�\u0000>����O\fw�~a)�/�9R5V�:ǫ��\u001c\n@O�Vό\bzA)�_��\u000e;U�?\u0019��<>���RPa8����\u0003rI�W���\r/�}�\u001c(1�\u001f�\u0000����G�=\u001f���\n\t\u0002���GA\u001eA�p �z�MQ�q�\u001dU>_�%�\u001eD�Sm|�\u0000I$R~,�Nw��\u0000ȍ��!\u0014\u0003��\r�<�\u0003G_���\u0006J\u001c.Q��\u0006[:�I@\u001e7pn���m�\u0003�Ѻ5� �Q�g��@�z+�\bnz8K���v@��\u001aCb}\u0001�6vR����\u0001�UY�\u001e�\u000e��6Ҳށ,J\u001cy�c(��\"X8�G�o��\u0012f�B��eqK%��\u0011;\u0001�Qx��զ�[�oɽ`\u0006]\u0002����\u0007��lG�Z\u0010��\u0010\u0010�\n�%�/��&\u001bSE�\u0010��?�x\f\u001ehC�X�\u000b5�\u000eG�>�R@$p�\u001a�(\f�ۘ{�\u0010=Ԟ��\u00150\u000e�ctv���^L�b�h\u0015\b��鲁�@!�<�5�\u0000?4��bv\u001fG\"$�\"�İ�{�FB@�@^�Y`1��6�CϦ\n\u0013�)G�4�8K\u0013��\f���\u0015�:�\u0016��*�ԧ����\u0007�\n�\u0000]c\u001a\u001f\"�\u0000,�\u001cB\u0006@�0y��\u0019�\u0000\u0006�����_8\u0011�b\"�`]͚v<#�:ꅳ�Sxе���/���)g9K�bx�\b'\u0000\n��.��\u0000<�/�\u0010�H� ؃����.Ѕ8PG\b�XyC�q\u001e�φ�!5� ���\u001a�Kӈa��KA ��̟�\u001b�+��*\nG �!9��Hi\n%�'�4��\u0010P:\u0006�9�v\u0001�>q\b`1բ\u000bA�x\u001e/6ͥ���S&�lh<���w�P\"'c�P\bh��NW�u��\u0002T��1ٽ`�R�\u0012�<Ջ�\u0017a\u0002q�\"&,А=��1\u0018\u00101\u001e��`t�\u000f (���\u0004Y0%;�1竹h>\u0011��V\u0012B�����\u001b�䲊�\u001bw��i\u0010\u0018\u0011l�7�8A@���\\w[\f��\u0002��A�(}\u0012���C�\u000fc���5\u0013h���\u0013���\u0012\u0005\u00111&\u0019�\u001c���G̅v�\u0000H��x�����_s��\u0006�(c\u001d�\u0006�\u001f\u0018vƙ�����\u00113���h6njq�y\u0010\u0014n�\u0003\u0011�L\u0013}����e}\u0013�\u001b�n��r\u0006��\\`:\u0000/$\u0000����n����p�>\r\nF�㶲M:�پ�\u0002�H'\b�\fQ��\u0018\u001c8\u000f�x�\u000b+A\u000f_8\u0006�?�\u000e����e�L�;ZW�\u001e�I�]0\u000f`\u0000��\n�v\u0001�=#�PܨA��G8\u0015WLFl�\u001f��\u001d�u\u0000��7�\u001e�:T`;\u0001��r���v\u0010\u000e\u00007���\u000f�\u0005�����\u0003|�\u0003�\u0016�ٮ�\u0014��\u0018�\u00162qOj�蘜x��ƅ\u0001�[�c�=��P@]XmC\u0002�R\u0015=\u001e�߫��\u0004e�?@�1���,��S%���8��>؈\u0005\u001d�\u000f�\u001c�\u001d���\u0005\u00150^��S���|\u0010��4�$r1��'H�&�:�\u0000yW ��\u0014^��E\f�ۘ���U�h��\u0013�]�\u0007DOy|9�\t�\u0000�Z|�#��\u001fv��O�<9\n|��40��*.\f�\u0012Y*�Ú8nB�<*��q9�}�/���\n��%�\u001d\u001e��&?�)U���1�A�O�\"~v9oL80�S�\u000b齾3HO13O˷�y�\u0014��\u0001��j�\u0000�A�/��\u001a�͏{�1r\\@����|��f푇��O��f\u0006�\u000b�OO,\u001d艭\u0006�\u001ftƥ��Y\u0017��O��,\u0018���k+��z�b[\u0006�����\u0000�߀;B�\u0004�~_��\u0011�v��\u0017�t��O��P�D�O���?���\bAt�/'�\u0013Xi��������I\u001fnP��<��\u0003�_\u000eS�\u0006��|o$s1\u0014�\u0013H���n\u00047�S�3`In\u000e��W\u001c�B��w\u001f��AB4r/�O\\=�߇\u0006̲r\u0018�\u0019�^\u001bg��\u0006q��\u000b�u���\u0019�\u0014,��\t�Î��,>�D�B6�Na��7�\r�����\u0005z��l\u001e�B���P/C�9Ʒ�Z_�\u0007��O\u000e\r�rFF:p\"؀(�1>\u0011:�\"u���\u001e�\u0007��o�w͏��PWu��{���F@�\u0012�\u0015�R�1�Mλ���!=h���\u0004\\������i��)\u0001��b]g��\u0017��/\bMj�����#�\u000e\u0003\u0018zb�\u0018�b�\u0003����Qh�m��Ku�\"1��|�eȼ:��\u001d@�v����a�s~��\u0003�=c~7B��c�p�@bb����r4~��1�Ύ���W�1�/\u001d��s5�҇)<�_8�x�\u0010�RB�!\u000eU�Y�<\u001e\u0002\u0018�bE�8�ғ��P\u001b\u00143B �*�aU��\u0010����m�\rP#�m�S�]\r���|cxEd۴D�7���r�4j�������\bu\u001aߌp\u0007b�0`\u0001��w�jϦv�E\u0012�\\s�2\u0010�s����J+�h�J7\u001e]g�x\u0012j\u001e�\u001c\u0019cv'��h\u001ec�\u0019�\u0002B(��pj��O\u000f\b��/mU�\b4��\u0001\"=�\u0006\u0006EWY�7\u0005oч�q\u0007���]V��\u001d&�^���\u0016\u0011��J>�����\u0005��~qUP�a\u001f���՜j�x`�h.9͊�B\u001a�X�L\u0005�]|\u0005\u0013��ˋ\u000ekE\u0001�p~\u0013\u000fhҶ\u0010\"\u0019Ҟ~�s/:�7A�r�ŉ<�\u001d\u000fS�Xy� �\u0011�1�\u0016�Q�����Ez��6��Ǌg����\u0000\u0002�9�\f\u0011�%ZS5��\u001a��*`E��\u0016`H�j���\u0007���KHPx7ո�34�6l\u0017\u001c�\u0015\u0010N�D�h��|�\u0001B�JEiG�\u0010.���\r��n8%\u0013*��\u001c���YZ#��ފ\u001a���9��g\u0011\u000bw3�7_\u0019\"��T乬eN#\\@�q����`�\u000e\\\u0018�]���{<�ué���=��g\u000e*B�$'\u000e\u0011\u001ddS�º+��#Bb譳θ�\u001dd��\u000e��#O�E�T��t�s�m��\"=�kדN\na\u0000�;�\u0000x�&\u0012 ��p\bW��r��\u0000�`�\u0004�� ��p\bW��q�:�'�\u001c�\u0007\n~G\t�D8�����]r�\u0007\u0000�\u0018�YV�0��#|�\u0000�\u000e$�!�[�Ƶ'�<��Q��΋��\u0018]j�A\u0004��(������*`\u0007�跀#�\u001c�|�\u0000�/3�<E��\u0002\u0015��mg���\u0002M�\u0012^P\u001c^��=��j�\u0005z��Zd\u0001�h���X��\u0007:���\u0017Xﶖ�D�}6�\u0017�t�&\u0015ߎg+u�d>_��\\�\u0000+�x�Z�&D;���ۚ2;b8+�\u0012<D\ty@u�\u0001�x\u001elJ��^�y�\u0015x\u000b�\u00193Q4�;�~g��\u001b��s�����ƍ\u001e|�w���}�KW\"^0T\"��0��b\r\u0001�\u0015WL\u0007E��,�$G�\u0004\"\u000e\u0012\u001c\u001c�\b��b�\fK&�����\u0000�T��q\u0015X`\u001f��Vhe�fo��\u0000\u0002�q(�U\u0006\u0001�\u0011�\u001dW��Fl\u001b�\u0001M;��i�i��kJ\u000e�����T�p���JS�\u001eF�[=2\u0002P��t\u001d?l�x�\u001d\u0005��1w�eC�A\n����JA]���9�i\u0017�J��V9�!�b5\u0013�\u001c�lt�jj�s^R�M�\\(�����\u0007�\f \u0004\u001aՎ\u0004�I/ǘW\u000er|i��r\u0017\u0017c�����|���#\u0018:\u001ei�\n�\u0011AZ�A��\u0000\u00141��k|e�\u001e=�41�O\u001c�M��H\u000e<�4� ڀ���Ծ5��`�T?|�]��\fz�K5k�[�\u0017�\f�\u001b�\u000b�3���√D��\n��\u001a�4�!�\u0018\u0005��c���6�����\u0001g�\u0010;\r�Bv�qw'�V\\\u0017�+R�L4�x�ښ�@�Y�/S$�\u0016^��h=̎��0a�d���\u0001,x�\"P�Za'N\u0001X�\u0017\\x���}\u0006�\u0007A��H�S\u0016\u0005)P����Y8�\u000bK�n��e�X��.�(E�n���L��mDk�\u0011j�@�\u001b�y��\u001a���\u0012��n80�,o��D\u0010�\u0005�v&��\u0007\u000e�F�4\u0018����\u0007���:;q����\"�\u000b5��(���\n�h\u000e�o'IޣZ7\u0003 �&$=��;��\u001aD���v�WE�Aw�\u0013�u\u0014|���k\u001fv4��\u0005\fG�.>A�)�r�,0��\u0014��չ�Y��DŢ;hy8�:d\u001bmEҾ���*\u001d\u0007.Y\"9z�\u0007g/f\u000e\n\u001e/�1���C�\u000f��!\u001du�p�6]��F��<d�a\"�>\u0006��t�V;[\tF��+��ƀ\u0001�IK1t�7)1�zbL}��kB�)�)آ2��[�:�B<\u0001��W�`\u0000��6�QPG\fm�v5쌞���h\u001a�t@\u0000\u0000:?@7��G\u0004 ���\u001d4�Q�D�\u0011�\u001c�ag֎����eM6\u0019���˯�l\u0014��>1�\u0013\u0018Ӱ�tB�L�L��\u0017�^:�=\u000b5\u001aEF����_�H\u0016\u0000�u��|ЭSU�\u0000�\u0013��\u00056���\u0010\u0016�DuW_\u001e\u0018����,���\u000e���H�^�\u001a��ѡ�*�\u0017Z�s�(��Y_�#\u0011\u0019��\n'f��1\rz�L���v>��\u0001A��@l<L�)\u001b\"t�6B(\u0019�4�#r@�OO�\u0015� �\u0018�:�9*\u001d=\f>\u001c\u0002j߰�\u0014���T&�Hh�x`�\u0006��D���\u001f��E�Ǻ@�����eY�\u0000�(\u0019*�\u0019��xnI�P\u0001�cb�l\u0006�4\u001cK�-!9!\u0003�\u001c]3y\n<B �= :į�n��aQ���\b|9�K\u0019\b��\ro\u0014K �\fl\u0006\nڄ}m��S�\u0000h\u0000\u0000\u0000\u0000\u0004�!�ހ��D�\u001cl����\u000e�LE\u001bڨ_���)�\u0018�\u001004m.(**.�:\u001a�p����\u001b��� �\u001fD�\u0001��Ԡlj���\u0000�NLT�\u0002)\u0014\u0006�cr{�\u0016�*//+�\n�\u0002P�&�;Z\u0012\u0010�:\u0014cz8�a\u0010j�RF�Ru��h�$����i�X�M�\u00146�\u0006�T���\";1|�/�ô�I|ZF��?B\u0002y���\\{u3z��*��l�j���\f��q�1�H��2�\u0019�\u0018_�\u0010��D��ȱ�K�5��!�ū�G\u0006\u0006�P\u001b�5.��]�Ng��)}Y�\u0015�\u001a�1\u0013�\u001c\b\u0010���`��"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "userLogin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"npranavr@gmail.com\",\r\n    \"password\": \"abc@123\",\r\n    \"user_type\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}user/login"
+			},
+			"response": [
+				{
+					"name": "sucess",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"npranavr@gmail.com\",\r\n    \"password\": \"abc@123\",\r\n    \"user_type\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/user/login"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "232"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e8-oWKBYoh2p6OtobhGHGg4GqIAdL8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 02:23:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": 200,\n    \"responseMessage\": \"Success\",\n    \"responseData\": {\n        \"user_id\": 1,\n        \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoxLCJpYXQiOjE3MDQ5Mzk4MDV9.SKgA8cbVSTGxnyOpa84Zk70WNLvT7dBM1_yYuCt8E7w\",\n        \"user_type\": 1\n    }\n}"
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"npranavr@mail.com\",\r\n    \"password\": \"abc@123\",\r\n    \"user_type\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/user/login"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "126"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7e-1bjtUqC3Uw6FCtFn3L30MUtyVFc\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 02:24:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": 404,\n    \"responseMessage\": \"user with npranavr@mail.com that you are looking for is not found\",\n    \"responseData\": {}\n}"
+				},
+				{
+					"name": "password mismatch",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"npranavr@gmail.com\",\r\n    \"password\": \"abc@1\",\r\n    \"user_type\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/user/login"
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "102"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"66-YPsnHXbvTY3odLOlYE4dPP2E4CU\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 11 Jan 2024 02:25:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"responseStatus\": 403,\n    \"responseMessage\": \"Authentication failed, Please login again\",\n    \"responseData\": {}\n}"
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"email1@gmail.com\",\r\n    \"password\": \"pass@123\",\r\n    \"user_name\": \"testEmail\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{url}}user/register"
+			},
+			"response": []
+		}
+	]
+}
